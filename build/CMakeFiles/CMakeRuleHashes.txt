@@ -1,0 +1,13 @@
+# Hashes of file build rules.
+16574b0cdd61d1b83a6c559e487b19e1 proto-src/CrowdCountAPI.grpc.pb.cc
+852f6042dc0e31a9a7da8525ce5444c1 proto-src/CrowdCountAPI.pb.cc
+3fde05554aaf697ff74b438c9f35c059 proto-src/FaceEmogDetectAPI.grpc.pb.cc
+a08f24b6a7f294043420a9065dca5d68 proto-src/FaceEmogDetectAPI.pb.cc
+ee2383da50850bd8f9e7cff82eeb741f proto-src/FaceRecogAPI.grpc.pb.cc
+344edaec429ec002ed3feccb050b7d42 proto-src/FaceRecogAPI.pb.cc
+027ce7a655ed3763f35cf549e19c6a08 proto-src/PersonFaceEmoDetectAPI.grpc.pb.cc
+238d89a033b6432c988f1eceac72eee3 proto-src/PersonFaceEmoDetectAPI.pb.cc
+3abec8c80d87b78372ddfd623ef01cc1 proto-src/PersonReIDAPI.grpc.pb.cc
+a0effb168cd37c0125186cb565a96f87 proto-src/PersonReIDAPI.pb.cc
+7af51076495e0d60048bc8c393e0c570 proto-src/common.grpc.pb.cc
+97d7d208e88f731ed50d40ff96a2e75d proto-src/common.pb.cc

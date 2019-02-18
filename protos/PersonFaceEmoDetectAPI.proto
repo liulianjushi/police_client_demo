@@ -1,0 +1,20 @@
+syntax = "proto3";
+package personfaceemodetect;
+
+
+service PersonFaceEmoDetectAPI {
+    rpc personFaceEmoDetect (personFaceEmoDetectRequest) returns (personFaceEmoDetectResponse) {};
+}
+
+message personFaceEmoDetectRequest {
+  bytes  rawData = 1;   //rawdata
+  string savePath = 2;   //待保存的路径
+  int32 Width = 3;
+  int32 Hight = 4;
+  int32 Channel = 5;
+}
+message personFaceEmoDetectResponse {
+  int32 currentFrameSum = 1; //当前帧人的数量
+  int32 totalPersonSum = 2;  //累加人数（可根据track ID）
+  int32 abnormalNum = 3;  //异常人数
+}

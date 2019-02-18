@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "common.proto";
+package faceemodetect;
+service FaceEmogDetectAPI {
+    rpc faceEmogDetect (faceEmogDetectRequest) returns (faceEmogDetectResponse) {};
+}
+
+message faceEmogDetectRequest {
+    bool isEmo = 1; // True:是; False:否（是否进行表情识别）
+    bytes rawData = 2; //（YUV或RGB格式）
+    int32 Width = 3;
+    int32 Hight = 4;
+    int32 Channel = 5;
+}
+
+message faceEmogDetectResponse {
+   repeated common.BoundingBox faceRect = 1; // 人脸坐标
+   repeated int32 status = 2;  //0:异常； 1：正常； 2：没有人脸 表情异常或正常
+}

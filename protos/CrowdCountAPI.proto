@@ -1,0 +1,19 @@
+syntax = "proto3";
+package crowdcount;
+import "common.proto";
+service CrowdCountAPI {
+    rpc crowdCount (crowdCountRequest) returns (crowdCountResponse) {};
+}
+
+message crowdCountRequest{
+    bytes rawData = 1;   //rawdata
+    common.BoundingBox Rect = 2; // 检测区域
+    int32 Width = 3;
+    int32 Hight = 4;
+    int32 Channel = 5;
+}
+
+message crowdCountResponse {
+   int32 rectNum = 1; //检测区域里的人数；
+}
+

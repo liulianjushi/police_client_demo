@@ -1,0 +1,41 @@
+syntax = "proto3";
+package facerecog;
+
+import "common.proto";
+
+service FaceRecogAPI {
+    rpc faceRecogUpload (faceRecogUploadRequest) returns (faceRecogUploadResponse) {};
+    rpc faceRecogRealtime (faceRecogRealtimeRequest) returns (faceRecogRealtimeResponse) {};
+    rpc faceRecogHistory (faceRecogHistoryRequest) returns (faceRecogHistoryResponse) {};
+}
+message faceRecogUploadRequest {
+    bytes rawData = 1;  //上传待布控人员人脸图片
+    int32 Width = 2;
+    int32 Hight = 3;
+    int32 Channel = 4;
+}
+
+message faceRecogUploadResponse {
+    int32 status = 1;   // 能否检测到人脸，0：有人脸， 1：没有人脸
+
+}
+message faceRecogRealtimeRequest {
+    bytes rawData = 1;  //待布控地点的实时图片（rawdata）
+    int32 Width = 2;
+    int32 Hight = 3;
+    int32 Channel = 4;
+
+}
+
+message faceRecogRealtimeResponse {
+    repeated int32 status = 1;     // 0:同一人； 1：不为同一人； 2：没有检测到人脸
+    repeated common.BoundingBox faceRect = 2; // face bbox ；如果没有人脸默认：[-1, -1, -1, -1]
+}
+
+message faceRecogHistoryRequest {
+    repeated string imagePath = 1;   //人脸路径列表[1, 2, 3, 4, 5 ...]
+}
+
+message faceRecogHistoryResponse {
+    repeated int32 index = 1;   //对应人脸路径的状态列表[0, 1, 0, 0, 0 ...]（其中1为是同一人，0为不是同一人, 2 为没有人脸）
+}

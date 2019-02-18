@@ -1,0 +1,8 @@
+syntax = "proto3";
+package common;
+message BoundingBox {
+  int32 x1 = 1;
+  int32 y1 = 2;
+  int32 x2 = 3;
+  int32 y2 = 4;
+}

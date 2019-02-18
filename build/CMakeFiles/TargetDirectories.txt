@@ -1,0 +1,7 @@
+/police_client_demo/build/CMakeFiles/rebuild_cache.dir
+/police_client_demo/build/CMakeFiles/crowd_count_client.dir
+/police_client_demo/build/CMakeFiles/face_emo_client.dir
+/police_client_demo/build/CMakeFiles/person_re_id_client.dir
+/police_client_demo/build/CMakeFiles/person_face_emo_client.dir
+/police_client_demo/build/CMakeFiles/face_recog_client.dir
+/police_client_demo/build/CMakeFiles/edit_cache.dir
